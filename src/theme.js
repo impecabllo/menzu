@@ -1,11 +1,11 @@
 import { createMuiTheme } from '@material-ui/core/styles'
 
-const fontFamily = 'sans-serif'
+const fontFamily = '"Roboto", sans-serif'
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#48C8DB',
+      main: '#ff5e3a',
     },
     secondary: {
       main: '#fff',
@@ -23,7 +23,6 @@ const theme = createMuiTheme({
     },
     h4: {
       fontFamily,
-      color: '#262626',
     },
     h5: {
       fontFamily,
