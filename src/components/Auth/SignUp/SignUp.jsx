@@ -4,12 +4,16 @@ import TextField from '@material-ui/core/TextField'
 
 import styles from './SignUp.module.sass'
 
-const SignUp = () => {
+const SignUp = (props) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  const handleSubmit = () => {
+    props.signUpRequest(email, password)
+  }
+
   return (
-    <form className={ styles.root }>
+    <div className={ styles.root }>
       <div className={ styles.formGroup }>
         <TextField
           label="E-mail"
@@ -40,12 +44,12 @@ const SignUp = () => {
         color="primary"
         size="large"
         className={ styles.button }
-        type="submit"
+        onClick={ handleSubmit }
         fullWidth
       >
         Sign Up
       </Button>
-    </form>
+    </div>
   )
 }
 

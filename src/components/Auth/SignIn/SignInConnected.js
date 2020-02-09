@@ -1,4 +1,13 @@
 import { connect } from 'react-redux'
 import SignIn from './SignIn'
+import { postSignIn } from '../../../store/actions/authActions'
 
-export default connect()(SignIn)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signInRequest(email, password) {
+      return dispatch(postSignIn({ email, password }))
+    }
+  }
+}
+
+export default connect(null, mapDispatchToProps)(SignIn)
