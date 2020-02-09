@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 
-import styles from './SignIn.module.sass'
+import styles from './SignUp.module.sass'
 
-const SignIn = () => {
+const SignUp = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -43,10 +43,10 @@ const SignIn = () => {
         type="submit"
         fullWidth
       >
-        Sign In
+        Sign Up
       </Button>
     </form>
   )
 }
 
-export default SignIn
+export default SignUp

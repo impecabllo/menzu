@@ -8,6 +8,10 @@ import Tab from '@material-ui/core/Tab'
 import Paper from '@material-ui/core/Paper'
 
 import styles from './Auth.module.sass'
+import logo from '../images/logo.png'
+
+import SignIn from './SignIn/SignInConnected'
+import SignUp from './SignUp/SignUpConnected'
 
 const Auth = (props) => {
   const [tab, setTab] = useState(props.match.params.authType)
@@ -23,7 +27,10 @@ const Auth = (props) => {
       <div className={ styles.bg }></div>
       <div className={ styles.root }>
         <Container maxWidth="xs">
-          <Paper elevation={ 1 }>
+          <div className={ styles.logo }>
+            <img src={ logo } alt="Menzu"/>
+          </div>
+          <Paper elevation={ 1 } className={ styles.paper }>
             <AppBar position="static" color="inherit" className={ styles.tabs }>
               <Tabs
                 value={ tab }
@@ -36,6 +43,12 @@ const Auth = (props) => {
                 <Tab label="Sign up" value="sign-up" />
               </Tabs>
             </AppBar>
+            { tab === 'sign-in' && (
+              <SignIn />
+            ) }
+            { tab === 'sign-up' && (
+              <SignUp />
+            ) }
           </Paper>
         </Container>
       </div>
