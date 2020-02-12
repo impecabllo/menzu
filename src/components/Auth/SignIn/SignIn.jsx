@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Redirect } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 
@@ -12,7 +13,7 @@ const SignIn = (props) => {
     props.signInRequest(email, password)
   }
 
-  return (
+  return props.state.isSuccess && !props.state.isFetching ? (<Redirect to="/user" />) : (
     <div className={ styles.root }>
       <div className={ styles.formGroup }>
         <TextField
@@ -43,6 +44,7 @@ const SignIn = (props) => {
         variant="contained"
         color="primary"
         size="large"
+        disabled={ !email || !password || props.state.isFetching }
         className={ styles.button }
         onClick={ handleSubmit }
         fullWidth

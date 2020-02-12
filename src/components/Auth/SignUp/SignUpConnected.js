@@ -2,6 +2,12 @@ import { connect } from 'react-redux'
 import SignUp from './SignUp'
 import { postSignUp } from '../../../store/actions/authActions'
 
+const mapStateToProps = (state) => {
+  return {
+    state: { ...state.auth.signUp.state }
+  }
+}
+
 const mapDispatchToProps = (dispatch) => {
   return {
     signUpRequest(email, password) {
@@ -10,4 +16,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(SignUp)
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp)

@@ -8,3 +8,9 @@ export const SIGNUP_POST = 'SIGNUP_POST'
 export const SIGNUP_FETCHING = 'SIGNUP_FETCHING'
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS'
 export const SIGNUP_FAILED = 'SIGNUP_FAILED'
+
+// user
+export const USER_GET = 'USER_GET'
+export const USER_FETCHING = 'USER_FETCHING'
+export const USER_SUCCESS = 'USER_SUCCESS'
+export const USER_FAILED = 'USER_FAILED'

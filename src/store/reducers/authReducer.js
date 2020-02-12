@@ -9,21 +9,14 @@ import {
 } from '../actions/actionTypes'
 import { initialStateStatus } from '../utils/state'
 
-const signInStore = {
-  token: '',
+const authStore = {
   ...initialStateStatus
 }
 
-const signUpStore = {
-  token: '',
-  ...initialStateStatus
-}
-
-const signInReducer = (state = signInStore, action) => {
+const signInReducer = (state = authStore, action) => {
   switch (action.type) {
     case SIGNIN_FETCHING:
       return Object.assign({}, state, {
-        token: '',
         state: {
           isFetching: true
         }
@@ -31,7 +24,6 @@ const signInReducer = (state = signInStore, action) => {
 
     case SIGNIN_SUCCESS:
       return Object.assign({}, state, {
-        token: action.payload,
         state: {
           isFetching: false,
           isSuccess: true
@@ -39,8 +31,8 @@ const signInReducer = (state = signInStore, action) => {
       })
 
     case SIGNIN_FAILED:
+      localStorage.setItem('token', action.payload)
       return Object.assign({}, state, {
-        token: '',
         state: {
           isFetching: false,
           isSuccess: false
@@ -52,11 +44,10 @@ const signInReducer = (state = signInStore, action) => {
   }
 }
 
-const signUpReducer = (state = signUpStore, action) => {
+const signUpReducer = (state = authStore, action) => {
   switch (action.type) {
     case SIGNUP_FETCHING:
       return Object.assign({}, state, {
-        token: '',
         state: {
           isFetching: true
         }
@@ -64,7 +55,6 @@ const signUpReducer = (state = signUpStore, action) => {
 
     case SIGNUP_SUCCESS:
       return Object.assign({}, state, {
-        token: action.payload,
         state: {
           isFetching: false,
           isSuccess: true
@@ -73,7 +63,6 @@ const signUpReducer = (state = signUpStore, action) => {
 
     case SIGNUP_FAILED:
       return Object.assign({}, state, {
-        token: '',
         state: {
           isFetching: false,
           isSuccess: false

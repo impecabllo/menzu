@@ -43,6 +43,7 @@ const SignUp = (props) => {
         variant="contained"
         color="primary"
         size="large"
+        disabled={ !email || !password || props.state.isFetching }
         className={ styles.button }
         onClick={ handleSubmit }
         fullWidth
