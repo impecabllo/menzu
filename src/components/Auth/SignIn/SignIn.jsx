@@ -13,7 +13,7 @@ const SignIn = (props) => {
     props.signInRequest(email, password)
   }
 
-  return props.state.isSuccess && !props.state.isFetching ? (<Redirect to="/user" />) : (
+  return props.state.isSuccess && !props.state.isFetching ? (<Redirect to="/profile" />) : (
     <div className={ styles.root }>
       <div className={ styles.formGroup }>
         <TextField

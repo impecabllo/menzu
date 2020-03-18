@@ -9,6 +9,12 @@ export const SIGNUP_FETCHING = 'SIGNUP_FETCHING'
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS'
 export const SIGNUP_FAILED = 'SIGNUP_FAILED'
 
+// profile
+export const PROFILE_GET = 'PROFILE_GET'
+export const PROFILE_FETCHING = 'PROFILE_FETCHING'
+export const PROFILE_SUCCESS = 'PROFILE_SUCCESS'
+export const PROFILE_FAILED = 'PROFILE_FAILED'
+
 // user
 export const USER_GET = 'USER_GET'
 export const USER_FETCHING = 'USER_FETCHING'

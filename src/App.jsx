@@ -12,9 +12,9 @@ import './fonts.sass'
 import styles from './App.module.sass'
 
 const Auth = lazy(() => import('./components/Auth/Auth'))
-const LandingRoot = lazy(() => import('./landing/LandingRoot'))
+const LandingRoot = lazy(() => import('./landing/LandingRootConnected'))
 
-const App = () => {
+const App = (props) => {
   return (
     <MuiThemeProvider theme={ theme }>
       <ConnectedRouter history={ history }>

@@ -23,6 +23,7 @@ const signInReducer = (state = authStore, action) => {
       })
 
     case SIGNIN_SUCCESS:
+      localStorage.setItem('token', action.payload)
       return Object.assign({}, state, {
         state: {
           isFetching: false,
@@ -31,7 +32,7 @@ const signInReducer = (state = authStore, action) => {
       })
 
     case SIGNIN_FAILED:
-      localStorage.setItem('token', action.payload)
+      localStorage.removeItem('token')
       return Object.assign({}, state, {
         state: {
           isFetching: false,
